@@ -1,0 +1,63 @@
+{
+  "inspections": {
+    "shopName": "Shop Name",
+    "inspectionType": "Inspection Type",
+    "inspectionDate": "Inspection Date",
+    "inspectorName": "Employee Name",
+    "violationsCount": "Violation Count",
+    "btnNewInspection": "New Inspection",
+    "startTime": "Inspection Start Time",
+    "violation": "Does the shop contain any violation?",
+    "complain": "Complain No.",
+    "shopLocation": "Shop Location",
+    "ownerName": "Owner Name",
+    "ownerPhone": "Owner Phone Number",
+    "ownerId": "Owner ID No.",
+    "licenseNumber": "License No.",
+    "licenseDate": "License Date",
+    "inspectionTime": "Inspection Time",
+    "employeeName": "Employee Name",
+    "employeeId": "Employee ID No.",
+    "nationality": "Nationality",
+    "violationItems": "Violation Items",
+    "notes": "Notes",
+    "shopPersonName": "Shop Person In-Charge Name",
+    "signature": "Signature",
+    "shopPersonNationality": "Shop Person In-Charge Nationality",
+    "shopPersonId": "Shop Person In-Charge ID",
+    "inspectionSignature": "Inspection Signature",
+    "inspectionEndTime": "Inspection End Time",
+    "attachments": "Attachments",
+    "submitButton": "Submit Form",
+    "yes": "Yes",
+    "no": "No",
+    "visit": "Visit",
+    "report": "Report",
+    "complainType": "Complain",
+    "add": "+",
+    "clearButton": "Clear",
+    "saveButton": "Save",
+    "closeButton": "Close",
+    "addSignature": "Add Signature",
+    "cancel": "Cancel & Return",
+    "withOutSubmit": "Save Without Submitting",
+    "addViolation": "Add Violation",
+    "violations": "Violations List"
+
+  },
+  "login": {
+    "email": "Username",
+    "password": "Password",
+    "loginButton": "Login",
+    "emailRequired": "Email is Required",
+    "passwordRequired": "Password is Required"
+  },
+  "code": {
+    "en": "English",
+    "ar": "عربي"
+  },
+  "errors": {
+    "violationRequired": "Please select violation",
+    "countRequired": "Please enter count violation"
+  }
+}

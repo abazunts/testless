@@ -1,0 +1,257 @@
+/*
+ * UI Button
+ *  
+ * Create UI Buttons using this module.
+ *
+ * Note: To create new type of button
+ *       first extend '.btn-base'.
+ */
+
+/*
+ * Base for all buttons 
+ */
+
+.btn-base {
+    .d-inline-flex;
+    .align-items(center);
+    white-space: nowrap;
+    cursor: pointer;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+
+    /* Prevent user from selecting the UI element */
+    .user-select(none);
+}
+
+/*
+ * Simple button
+ */
+
+.btn {
+    /* Extend base btn */
+    &:extend(.btn-base);
+
+    /* Unique styles */
+    padding: 0 15px;
+    height: 42px;
+    line-height: 40px;
+    font-family: @base-font-family;
+    font-size: 14px;
+    .radius(21px);
+    .transition(all 0.2s ease);
+    border: 1px solid transparent;
+    .box-shadow(0, 5px, 15px, rgba(25, 124, 113, 0.3));
+    .font-bold;
+    letter-spacing: 0.4px;
+
+    & i {
+        .transition(transform 0.2s ease);
+        margin-right: 8px;
+
+        &.text-brand {
+    
+            &:before {
+                color: @color-brand-btn;
+            }
+        }
+    }
+
+    &--brand {
+        background: @color-brand-btn;
+        color: #fff;
+
+        &:hover {
+            background: @color-brand-hovered;
+        }
+
+        &:active {
+            background: @color-brand-active;
+        }
+    }
+
+    &--brand-outline {
+        background: #fff;
+        color: @color-brand-btn;
+        border-color: @color-brand-btn;
+
+        &:hover {
+            background: @color-brand-bg;
+        }
+
+        &:active {
+            background: darken(@color-brand-bg, 3%);
+        }
+    }
+
+    &--blue {
+        background: @color-blue;
+        color: #fff;
+        box-shadow: 0 4px 24px -8px @color-blue;
+
+        &:hover {
+            background: lighten(@color-blue, 5%);
+        }
+
+        &:active {
+            background: darken(@color-blue, 10%);
+        }
+
+        & i:before {
+            color: #fff;
+        }
+    }
+
+    &--blue-outline {
+        background: #fff;
+        color: @color-blue;
+        border-color: @color-blue;
+
+        &:hover {
+            background: #ecf3f7;
+        }
+
+        &:active {
+            background: darken(#ecf3f7, 2%);
+        }
+
+        & i:before {
+            color: @color-blue;
+        }
+    }
+
+    &--danger {
+        background: @color-danger;
+        color: #fff;
+
+        &:hover {
+            background: lighten(@color-danger, 5%);
+        }
+
+        &:active {
+            background: darken(@color-danger, 5%);
+        }
+    }
+
+    &--default {
+        background: #fff;
+        color: @base-font-color;
+        border-color: @color-gray-border;
+        border-width: 2px;
+
+        &:hover {
+            background: darken(#fff, 2%);
+        }
+
+        &:active {
+            background: darken(#fff, 4%);
+        }
+    }
+
+    &--default-outline {
+        .font-regular;
+        border: 1px solid @color-gray-border;
+    }
+
+    &--arrow-move {
+
+        & i {
+            margin-left: 8px;
+            margin-right: 0!important;
+        }
+        
+        &:hover {
+            & i {
+                .translateX(2px);
+            }
+        }
+    }
+
+    &--sm {
+        height: 36px;
+        line-height: 34px;
+        padding: 0 12px;
+        min-width: 82px;
+        .justify-content(center);
+        font-size: 12px;
+    }
+
+    &--long {
+        padding-left: 28px;
+        padding-right: 28px;
+        justify-content: center;
+    }
+
+    &--high {
+        height: 48px;
+        line-height: 46px;
+        font-size: 16px;
+        border-radius: 24px;
+    }
+
+    &--short {
+        min-width: 56px;
+    }
+
+    &--rect {
+        border-radius: 4px;
+    }
+
+    &--no-shadow {
+        box-shadow: unset;
+    }
+
+    &:disabled {
+        background-color: @color-disabled-bg;
+        border-color: @color-disabled-bg;
+    }
+}
+
+@media (max-width: @screen-sm) {
+    .btn {
+        max-width: 350px;
+        white-space: pre-wrap;
+        height: auto;
+        line-height: 1.4;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        justify-content: center;
+        text-align: center;
+
+        &--long {
+            padding-left: 27px;
+            padding-right: 27px;
+        }
+
+        &--high {
+            white-space: nowrap;
+        }
+    }
+}
+
+
+.rtl .btn {
+
+    & i {
+        margin-right: 0;
+        margin-left: 8px;
+    }
+
+    &--arrow-move {
+
+        & i {
+            margin-left: 0!important;
+            margin-right: 8px!important;
+
+            &:before {
+                content: @icon-arrow-left;
+            }
+        }
+        
+        &:hover {
+            & i {
+                .translateX(-2px);
+            }
+        }
+    }
+}

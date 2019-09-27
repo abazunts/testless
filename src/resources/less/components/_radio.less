@@ -1,0 +1,113 @@
+/*
+ * UI Radio button
+ *
+ * Create UI Radio button using this module
+ */
+
+.radio {
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+
+    /* Prevent user from selecting the UI element */
+    .user-select(none);
+
+    input[type='radio'] {
+        /* Hide the default radio button */
+        display: none;
+
+        /* Apply styles to your custom radio button 
+		   when default radio button is checked */
+        &:checked {
+            // default radio buttons
+            + span {
+                
+                &:before {
+                    .box-shadow(0px, 0px, 0px, 2px #fff inset);
+                    background-color: #3384b4;
+                    border-color: @color-blue;
+                }
+            }
+        }
+    }
+
+    /* Here goes your custom radio button styles */
+    span {
+        // Here goes radio button label styles ...
+        position: relative;
+        display: flex;
+        /* Radio circle */
+        &:before {
+            content: '';
+            .radius(50%);
+            .size(12px, 12px);
+            flex-shrink: 0;
+            border: 1px solid @color-blue;
+            position: relative;
+            margin-right: 16px;
+            z-index: 1;
+            top: 1px;
+        }
+
+        &:after {
+
+            content: '';
+            position: absolute;
+            pointer-events: none;
+            z-index: 0;
+            top: -7px;
+            left: -8px;
+            transform: scale(0);
+            background-color: @color-lightblue;
+            .size(30px, 30px);
+            border-radius: 50%;
+            transition: transform 0.2s ease;
+        }
+
+        &.no-label {
+
+            &:before {
+                content: '';
+                margin-right: 0;
+                top: 0;
+            }
+
+            &:after {
+                top: -8px;
+            }
+        }
+    }
+
+    &:hover {
+        & span {
+
+            &:after {
+                transform: scale(1);
+            }
+        }
+    }
+}
+
+
+.rtl .radio {
+
+    & span {
+
+        &:before {
+            margin-left: 16px;
+            margin-right: 0;
+        }
+
+        &:after {
+            right: -8px;
+            left: auto;
+        }
+
+        &.no-label {
+
+            &:before {
+                margin-left: 0;
+            }
+        }
+    }
+}

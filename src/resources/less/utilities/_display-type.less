@@ -1,0 +1,48 @@
+/*
+ * Display type 
+ *
+ * Display type utility which
+ * has responsive breakpoints 
+ */
+ 
+.disabled {
+	opacity: .5;
+	pointer-events: none!important;
+	cursor: not-allowed!important;
+	&:hover {
+		pointer-events: none!important;
+		cursor: not-allowed!important;
+	}
+}
+
+.hide {
+	display: none;
+}
+
+.show {
+	display: block;
+}
+
+.d-block{
+	display: block !important;
+}
+
+.d-inline-block{
+	display: inline-block !important;
+}
+
+.d-inline {
+	display: inline !important;
+}
+
+.d-flex {
+	.flex-display;
+}
+
+.d-inline-flex {
+	.flex-display(inline-flex);
+}
+
+.d-none {
+	display: none;
+}

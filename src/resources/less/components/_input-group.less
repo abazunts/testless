@@ -1,0 +1,268 @@
+/* 
+ * UI Input group
+ *
+ * Use this module to create input-groups
+ * it is basically two elements next to each other
+ */
+
+.input-group {
+	display: flex;
+	align-items: center;
+	height: 46px;
+
+	&__item {
+		display: flex;
+		height: 100%;
+		align-items: center;
+		padding: 0 16px;
+
+		&:first-child {
+			background-color: @color-blue;
+			color: #fff;
+			border-radius: 4px 0 0 4px;
+		}
+
+		&:last-child {
+			border-radius: 0 4px 4px 0;
+			border: 1px solid @color-blue;
+		}
+	}
+
+	&--file {
+
+		& .input-group__item {
+			padding: 10px 16px;
+			overflow: hidden;
+		}
+
+		& label {
+			cursor: pointer;
+			min-width: 86px;
+		}
+
+		& p {
+			min-width: 214px;
+			position: relative;
+			padding-right: 35px;
+
+			& span {
+				display: block;
+				max-width: 155px;
+				text-overflow: ellipsis;
+				overflow: hidden;
+			}
+
+			& button {
+				display: none;
+				position: absolute;
+				right: 0;
+				.centered-y;
+				.size(44px, 44px);
+			}
+
+
+			& i {
+				position: absolute;
+				.centered;
+
+				&:before {
+					color: @base-font-color;
+				}
+			}
+
+			&.active {
+				
+				& button {
+					display: block;
+				}
+			}
+		}
+	}
+
+	&--radio {
+
+		& label, & .input-group__item:first-child {
+			background-color: #fff;
+			overflow: hidden;
+		}
+
+		& label {
+			cursor: pointer;
+			position: relative;
+			border: 1px solid @color-blue;
+			width: 84px;
+			display: flex;
+			justify-content: center;
+
+			&:first-child {
+				border-right: none;
+			}
+
+			input[type='radio'] {
+				/* Hide the default radio button */
+				display: none;
+		
+				/* Apply styles to your custom radio button 
+				   when default radio button is checked */
+				&:checked {
+					// default radio buttons
+					+ p {
+						color: #fff;
+
+						&:before {
+							background-color: @color-blue;
+						}
+					}
+				}
+			}
+
+			& p {
+				color: @color-blue;
+
+				&:before {
+					content: "";
+					position: absolute;
+					top: 0;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					background-color: #fff;
+					z-index: 0;
+				}
+
+				& span {
+					position: relative;
+					z-index: 1;
+				}
+			}
+		}
+	}
+
+	&--select {
+
+		& .input-group__item {
+
+			&:first-child {
+				min-width: 103px;
+				position: relative;
+				padding-left: 0;
+		
+				&:before {
+					content: '';
+					position: absolute;
+					.centered-y;
+					right: 16px;
+					.triangle(bottom, #fff, 5px);
+					pointer-events: none;
+				}
+			}
+
+			&:last-child {
+				
+				& input {
+					width: 100%;
+				}
+
+				& input[type='number']::-webkit-inner-spin-button,
+				& input[type='number']::-webkit-outer-spin-button {
+					-webkit-appearance: none;
+					margin: 0;
+				}
+			}
+		}
+
+
+		& select {
+			height: 100%;
+			width: 100%;
+			appearance: none;
+			cursor: pointer;
+			padding-left: 36px;
+
+			& option {
+				color: @base-font-color;
+			}
+		}
+	}
+}
+
+.rtl .input-group {
+
+	&__item {
+
+		&:first-child {
+			border-radius: 0 4px 4px 0;
+			border-right: 1px solid @color-blue;
+		}
+
+		&:last-child {
+			border-radius: 4px 0 0 4px;
+		}
+	}
+
+	&--file {
+
+		& p {
+			padding-right: 16px;
+			padding-left: 35px;
+
+			& i {
+				right: auto;
+				left: 16px;
+			}
+		}
+	}
+
+	&--select {
+
+		& .input-group__item {
+
+			&:first-child {
+				padding-right: 0;
+		
+				&:before {
+					right: auto;
+					left: 16px;
+				}
+			}
+		}
+
+
+		& select {
+			padding-left: 0;
+			padding-right: 36px;
+		}
+	}
+}
+
+@media (max-width: @screen-sm) {
+	.input-group {
+
+
+		&--file {
+
+			& p {
+				min-width: unset;
+				width: 100%;
+			}
+		}
+	}
+}
+
+@media (max-width: 410px) {
+	.input-group {
+
+
+		&--file {
+
+			& p {
+				min-width: unset;
+				width: 100%;
+
+				& span {
+					max-width: 90px;
+				}
+			}
+		}
+	}
+}

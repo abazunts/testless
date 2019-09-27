@@ -1,0 +1,126 @@
+.logoWrapper {
+    grid-row: 1;
+    margin-left: 80px;
+    max-width: 25vh;
+}
+
+.logoImg {
+    width: 25vh;
+}
+
+.submenuLink {
+    cursor: pointer;
+    font-size: 18px;
+    color: #197c71;
+}
+
+.submenuLink > button {
+    color: #197c71;
+}
+
+.topMenu > div {
+    width: 25%;
+    float: left;
+    position: relative;
+}
+.topMenu > div > button {
+    background: none;
+    border: none;
+    color: black;
+}
+.topMenu div button:hover { color: #197c71; }
+
+.submenu {
+    background: white;
+    border-radius: 10px;
+    position: absolute;
+    left: 0px;
+    margin-top: 3px;
+    top: 100%;
+    z-index: 5;
+    width: 50px;
+    opacity: 0;
+    transform: scaleY(0);
+    transform-origin: 0 0;
+    transition: .2s ease-in-out;
+    box-shadow: 0px 28px 53px -1px #c5c5c5;
+}
+.submenu button {
+    cursor: pointer;
+    color: black;
+    text-align: left;
+    font-size: 14px;
+    border: none;
+    background: none;
+    padding: 10px;
+    width: 100%;
+}
+
+.submenu button > img {
+    margin-right: 5px;
+}
+.submenu button:hover {
+    background: #e5f0ef;
+}
+.submenu div:last-child a { border-bottom: none; }
+.topMenu > div:hover .submenu {
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+button:active, button:focus {
+    outline: none;
+}
+button::-moz-focus-inner {
+    border: 0;
+}
+
+/*@media (max-width: 1860px) {*/
+/*    .logoImg {*/
+/*        width: 20vh;*/
+/*    }*/
+/*}*/
+
+
+/*@media (max-width: 1750px) {*/
+/*    .logoImg {*/
+/*        width: 15vh;*/
+/*    }*/
+/*}*/
+
+/*@media (max-width: 1650px) {*/
+/*    .logoImg {*/
+/*        width: 10vh;*/
+/*    }*/
+/*}*/
+
+/*@media (max-width: 1550px) {*/
+/*    .logoImg {*/
+/*        width: 5vh;*/
+/*    }*/
+/*}*/
+
+/*@media (max-width: 1250px) {*/
+/*    .wrapperApp {*/
+/*        grid-template-columns: 1fr 4.5fr;*/
+/*    }*/
+/*}*/
+
+/*@media (max-width: 1050px) {*/
+/*    .wrapperApp {*/
+/*        grid-template-columns: 1fr 4fr;*/
+/*    }*/
+/*}*/
+
+/*@media (max-width: 1000px) {*/
+/*    .wrapperApp {*/
+/*        grid-template-columns: 1fr 4fr;*/
+/*    }*/
+/*}*/
+
+/*@media (max-width: 850px) {*/
+/*    .wrapperApp {*/
+/*        grid-template-columns: 0.2fr 3.5fr;*/
+/*    }*/
+/*    .content {padding-left: 105px;}*/
+/*}*/

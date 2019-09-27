@@ -1,0 +1,74 @@
+/*
+ * Global styles
+ *
+ * Define global styles.
+ */
+
+
+html, body {
+	height: 100%;
+}
+
+body {
+	padding-top: @header-height;
+	color: @base-font-color;
+	font-size: @base-font-size;
+	font-weight: @base-font-weight;
+	font-family: @base-font-family;
+	background-color: @base-background-color;
+	line-height: @base-line-height;
+}
+
+
+/*
+ * Global classes
+ * 
+ * Define global classes to apply
+ * to  your <body/>.
+ *
+ * Note: Nested selectors allowed.
+ */
+
+ .rtl {
+	direction: rtl;
+	
+	& .icon-arrow-left {
+		&:before {
+			content: @icon-arrow-right; 
+		}
+	}
+
+	
+	& .icon-arrow-right {
+		&:before {
+			content: @icon-arrow-left; 
+		}
+	}
+
+	
+	& .icon-arrow-double-left {
+		&:before {
+			content: @icon-arrow-double-right; 
+		}
+	}
+
+	
+	& .icon-arrow-double-right {
+		&:before {
+			content: @icon-arrow-double-left; 
+		}
+	}
+ }
+
+
+/*
+ * Global Media Queries
+ *
+ * Define global media queries.
+ */
+
+
+// ...
+
+
+

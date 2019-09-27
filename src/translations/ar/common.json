@@ -1,0 +1,62 @@
+{
+  "inspections": {
+    "shopName": "اسم المنشأة / المحل",
+    "inspectionType": "نوع التفتيش",
+    "inspectionDate": "تاريخ التفتيش",
+    "inspectorName": "اسم المفتش",
+    "violationsCount": "عدد المخالفات",
+    "btnNewInspection": "تفتيش جديد",
+    "startTime": "وقت بداية التفتيش",
+    "violation": "هل المنشأة تحتوي على مواد مخالفة؟",
+    "complain": "رقم الشكوى",
+    "shopLocation": "الموقع",
+    "ownerName": "اسم المالك",
+    "ownerPhone": "رقم جوال المالك",
+    "ownerId": "رقم السجل المدني للمالك",
+    "licenseNumber": "رقم الرخصة",
+    "licenseDate": "تاريخ الرخصة",
+    "inspectionTime": "وقت التفتيش",
+    "employeeName": "اسم الموظف",
+    "employeeId": "رقم الهوية / الإقامة للموظف",
+    "nationality": "جنسية الموظف",
+    "violationItems": "المنتج المخالف",
+    "notes": "ملاحظات",
+    "shopPersonName": "اسم الشخص المسؤول",
+    "signature": "التوقيع",
+    "shopPersonNationality": "جنسية الشخص المسؤول",
+    "shopPersonId": "اسم الموظف المسؤول",
+    "inspectionSignature": "توقيع المفتش",
+    "inspectionEndTime": "وقت نهاية التفتيش",
+    "attachments": "المرفقات",
+    "submitButton": "رفع التقرير",
+    "yes": "موافق",
+    "no": "غير موافق",
+    "visit": "زيارة",
+    "report": "تقرير",
+    "complainType": "شكوى",
+    "add": "+",
+    "clearButton": "مسح",
+    "saveButton": "حفظ",
+    "closeButton": "اغلاق",
+    "addSignature": "إضافة توقيع",
+    "cancel": "إلغاء وعودة",
+    "withOutSubmit": "حفظ بدون ارسال",
+    "addViolation": "إضافة مخالفة",
+    "violations": "قائمة المخالفات"
+  },
+  "login": {
+    "email": "اسم المستخدم",
+    "password": "كلمة السر",
+    "loginButton": "دخول",
+    "emailRequired": "البريد الالكتروني مطلوب",
+    "passwordRequired": "كلمة المرور مطلوبة"
+  },
+  "code": {
+    "en": "English",
+    "ar": "عربي"
+  },
+  "errors": {
+    "violationRequired": "Please select violation",
+    "countRequired": "Please enter count violation"
+  }
+}

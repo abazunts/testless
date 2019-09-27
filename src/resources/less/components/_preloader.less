@@ -1,0 +1,156 @@
+@size: 50px;
+
+.preloader {
+	position: absolute;
+	top: 160px;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	background-color: rgba(255,255,255, .4);
+	z-index: 99;
+
+	&-folding {
+		width: @size;
+		height: @size;
+		display: inline-block;
+		.rotate(45deg);
+		font-size: 0;
+
+		span {
+		    position: relative;
+		    width: @size/2;
+		    height: @size/2;
+		    .scale(1.1);
+		    display: inline-block;
+
+		    &::before {
+				content: '';
+				background-color: @color-brand;
+				position: absolute;
+				left: 0;
+				top: 0;
+				display: block;
+				width: @size/2;
+				height: @size/2;
+				-moz-transform-origin: 100% 100%;
+				-ms-transform-origin: 100% 100%;
+				-webkit-transform-origin: 100% 100%;
+				transform-origin: 100% 100%;
+				.animation(folding 2.50s infinite linear both);
+		    }
+		}
+
+		.leaf2 {
+			.transform(rotateZ(90deg) scale(1.1));
+			&::before {
+				animation-delay: .30s;
+				background-color: darken(@color-brand, 5%);
+			}
+		}
+
+		.leaf3 {
+			.transform(rotateZ(270deg) scale(1.1));
+			&::before {
+				animation-delay: .90s;
+				background-color: darken(@color-brand, 5%);
+			}
+		}
+
+		.leaf4 {
+			.transform(rotateZ(180deg) scale(1.1));
+
+			&::before {
+				animation-delay: .60s;
+				background-color: darken(@color-brand, 10%);
+			}
+		}
+	}
+
+	//with loading text and shadow
+	&-wrapper {
+		position: absolute;
+		left: 50%;
+		top: 30%;
+		margin-top: -@size;
+		margin-left: -@size;
+		width: @size*2;
+		height: @size*2;
+		text-align: center;
+
+		//shadow
+		&:after {
+			content: '';
+			position: absolute;
+			left: 0;
+			right: 0;
+			bottom: -20px;
+			margin: auto;
+			width: @size*1.8;
+			height: 6px;
+			background-color: rgba(0,0,0,.1);
+			.filter(blur(2px));
+			.radius(100%);
+			z-index: 1;
+			.animation(shadow 0.5s ease infinite alternate)
+		}
+
+		.loading {
+			font-size: 12px;
+			letter-spacing: 0.1em;
+			display: block;
+			color: @color-brand;
+			position: relative;
+			top: @size/2;
+			z-index: 2;
+			.animation(text 0.5s ease infinite alternate)
+		}
+	}
+}
+
+@media (max-width: @screen-md) {
+	.preloader {
+		top: 320px;
+	}
+}
+
+@media (max-width: 600px) {
+	.preloader {
+		top: 340px;
+	}
+}
+
+@media (max-width: 400px) {
+	.preloader {
+		top: 400px;
+	}
+}
+
+//animation
+@keyframes folding {
+  0%, 10%{
+    .transform(perspective(140px) rotateX(-180deg));
+    opacity: 0;
+  }
+  25%, 75%{
+    .transform(perspective(140px) rotateX(0));
+    opacity: 1;
+  }
+  90%, 100%{
+    .transform(perspective(140px) rotateX(180));
+    opacity: 0;
+  }
+}
+
+// text and shadow animation
+@keyframes text {
+  100%{
+    top: (@size/2) + 10;
+  }
+}
+
+@keyframes shadow {
+  100%{
+    bottom: -18px; 
+    width: @size*2;
+  }
+}

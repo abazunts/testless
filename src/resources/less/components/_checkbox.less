@@ -1,0 +1,178 @@
+/*
+ * UI Checkbox
+ *
+ * Create UI Checkbox using this module
+ */
+
+.checkbox{
+	display: inline-block;
+	cursor: pointer;
+
+	/* Prevent user from selecting the UI element */
+	.user-select(none);
+	
+	
+	input[type="checkbox"]{
+
+		/* Hide the default checkbox */
+		display: none;
+		
+		/* Apply styles to your custom checkbox 
+		   when default checkbox is checked */
+		&:checked {
+			+ span{
+				&:before{
+					background-color: @color-brand;
+					border-color: transparent;
+				}
+			}
+		}
+	}
+	
+	/* Here goes your custom checkbox styles */
+	span {
+		// Here goes checkbox label styles ...
+		font-size: 12px;
+		position: relative;
+		.font-regular;
+
+		/* Box */
+		&:before{
+			// content: @icon-check;
+			font-family: @icomoon-font-family;
+			color: #fff;
+			display: inline-block;
+			vertical-align: middle;
+			margin-right: @layout-md;
+			position: relative;
+			top: -2px;
+			font-size: 10px;
+			padding: 1px 2px 2px;
+			.size(16px, 16px);
+			.radius(4px);
+			background-color: #fff;
+			border: 1px solid @color-gray-border;
+		}
+	}
+
+	&:disabled{
+		
+	}
+}
+
+.checkbox-menu {
+	display: inline-block;
+	cursor: pointer;
+	.radius(2px);
+	overflow: hidden;
+	position: relative;
+	padding: 8px;
+	min-height: 150px;
+
+	/* Prevent user from selecting the UI element */
+	.user-select(none);
+
+	input[type="checkbox"] {
+
+		/* Hide the default checkbox */
+		display: none;
+		
+		/* Apply styles to your custom checkbox 
+		   when default checkbox is checked */
+		&:checked {
+			~ .checkbox-menu {
+
+				&__title {
+					color: #fff;
+				}
+
+				&__overlay {
+					background-color: @color-brand;
+					border-color: @color-brand;
+				}
+			}
+		}
+
+		&:disabled {
+			
+			~ .checkbox-menu {
+
+				&__title, &__thumb {
+					opacity: .7;
+				}
+			}
+		}
+	}
+
+	&__title, &__thumb {
+		display: block;
+		position: relative;
+		z-index: 1;
+	}
+
+	&__title {
+		text-align: center;
+		padding-bottom: 9px;
+		padding-top: 4px;
+		font-size: 11px;
+		.transition(color .15s ease);
+	}
+
+	&__thumb {
+		background: transparent no-repeat center;
+		background-size: cover;
+		.size(100%, 106px);
+	}
+
+	&__overlay {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background-color: #fff;
+		border: 2px solid @color-gray-border;
+		.radius(2px);
+		.transition(all .15s ease);
+		z-index: 0;
+	}
+
+	// for vegetables
+	&--sm {
+		padding: 0;
+		min-height: 70px;
+
+		input[type="checkbox"] {
+
+			&:checked {
+				~ .checkbox-menu {
+
+					&__title {
+						color: @base-font-color;
+					}
+
+					&__overlay {
+						background-color: transparent;
+						border-color: transparent;
+					}
+
+					&__thumb {
+						border-color: @color-brand;
+					}
+				}
+			}
+		}
+		
+		& .checkbox-menu {
+
+			&__thumb {
+				height: 70px;
+				border: 3px solid transparent;
+			}
+
+			&__overlay {
+				border-color: transparent;
+			}
+		}
+	}
+}

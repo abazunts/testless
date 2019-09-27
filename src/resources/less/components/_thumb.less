@@ -1,0 +1,38 @@
+/*
+ * Thumb
+ *
+ * Define thumb for things like
+ * user-photo, comment-author-photo,
+ * small image & e.t.c.
+ *
+ */
+
+.thumb{
+	background: #ccc no-repeat center;
+
+	/* Fallback for IOS Safari 'cover' if possible else '100%' */
+	background-size: 100%;
+	background-size: cover;
+
+	/* Sizing */
+	&--sm{
+		.size(50px, 50px);
+	}
+
+	&--md{
+		.size(75px, 75px);
+	}
+
+	&--lg{
+		.size(100px, 100px);
+	}
+
+	/* Rounded variant */
+	&--rounded{
+		.radius(10px);
+	}
+
+	&--circle{
+		.radius(50%);
+	}
+}

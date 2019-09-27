@@ -1,0 +1,29 @@
+.xleb{
+	padding-bottom: 60px;
+	& li{
+		float: left;
+		&:before{
+			content: "/\00a0";
+			padding: 0 5px;
+			color: #999;
+		}
+		&:first-child:before{
+
+			content: "";
+			padding: 0;
+		}
+	}
+	& a{
+		color: #999;
+		&:hover{
+			text-decoration: underline;
+		}
+	}
+	& a.active{
+		cursor: default;
+		color: @defaultcolor;
+		&:hover{
+			text-decoration: none;
+		}
+	}
+}

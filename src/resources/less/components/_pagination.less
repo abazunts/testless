@@ -1,0 +1,60 @@
+/*
+ * Pagination
+ *
+ * Define pagination component.
+ *
+ * Note: Uses nested selectors for 'laravels' 
+ *       automatically generated pagination.
+ *       
+ */
+
+ .pagination{
+    display: inline-block;
+
+    li{
+        float: left;
+        .size(32px, 32px);
+        overflow: hidden;
+        border: 2px solid @color-black;
+        margin-right: 16px;
+        .radius(2px);
+
+        & a {
+            width: 100%;
+            height: 100%;
+            display: block;
+            text-align: center;
+            padding: 4px;
+            font-size: 20px;
+        }
+        
+        &.active {
+            border: none;
+        }
+
+        &.active, &:hover{
+            a {
+                background-color: @brand-blue;
+                color: #fff;
+                cursor: pointer;
+                border: none;
+            }
+        }
+
+        &.disabled{
+            opacity: 30;
+
+            a {
+                cursor: not-allowed;
+                background-color: @color-gray;
+                color: @color-gray-text;
+            }
+
+            &:hover{
+                a {
+                    cursor: not-allowed;
+                }
+            }
+        }
+    }
+}

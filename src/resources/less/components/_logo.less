@@ -1,0 +1,61 @@
+/*
+ * Site Logo 
+ *
+ * Here you define your base logo styles
+ * it may be reused throughout your website
+ */
+
+.logo{
+	// vertical-align: middle;
+	background: url(../images/logo.svg) no-repeat center;
+	.size(@logo-width, @logo-height);
+	display: inline-block;
+	position: relative;
+	z-index: 102;
+	.flex-shrink(0);
+	position: relative;
+
+	& span {
+		position: absolute;
+		left: 0;
+		top: 0;
+		background-color: @color-brand;
+		color: #fff;
+		font-size: 8px;
+		.size(37px, 16px);
+		.radius(4px);
+		text-align: center;
+		line-height: 18px;
+	}
+}
+
+@media (max-width: @screen-lg) {
+	.logo {
+		.size(48px, 48px);
+		background-image: url(../images/logo-sm.svg);
+		background-size: 48px;
+
+		& span {
+			display: none;
+		}
+	}
+}
+
+@media (max-width: @screen-md) {
+	.logo {
+		.size(45px, 45px);
+		background-image: url(../images/logo-sm.svg);
+		background-size: 45px;
+
+		& span {
+			display: none;
+		}
+	}
+}
+
+@media (min-width: @screen-xs) and (max-width: @screen-sm) {
+	.logo {
+		position: absolute;
+		.centered-x;
+	}
+}

@@ -1,0 +1,38 @@
+.correction {
+    height: 76px;
+    max-width: 600px;
+    display: flex;
+    border-radius: 4px;
+    overflow: hidden;
+    width: 100%;
+    font-size: 14px;
+
+    &__icon {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 24px;
+    }
+
+    &__info {
+        padding: 16px 16px 12px;
+        width: 100%;
+        line-height: 22px;
+    }
+
+    &--danger {
+
+        & .correction {
+
+            &__icon {
+                background-color: @color-danger;
+            }
+
+            &__info {
+                background-color: #FCF4F4;
+                color: @color-danger;
+            }
+        }
+    }
+}

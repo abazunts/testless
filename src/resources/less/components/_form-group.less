@@ -1,0 +1,93 @@
+/*
+ * UI Form-group
+ * 
+ * Use this module to create things
+ * like bottom margin to space out your 
+ * forms or use to define states for your forms
+ */
+
+.form-group {
+    position: relative;
+    margin-bottom: 25px;
+
+    &__label {
+        font-size: 14px;
+        display: block;
+        color: #333;
+        .font-bold;
+        margin-bottom: 5px;
+    }
+
+    &__info {
+        font-size: 10px;
+        color: #666;
+        padding-top: 8px;
+        display: none;
+    }
+
+    &--error {
+        /* Error state ... */
+        .input {
+            border-color: @color-danger;
+        }
+
+        .form-group__info {
+            display: block;
+            color: @color-danger;
+        }
+    }
+
+    &__datepicker {
+        position: relative;
+
+        &:before {
+            content: @icon-calendar;
+            font-family: @icomoon-font-family;
+            position: absolute;
+            .centered-y;
+            right: 16px;
+            pointer-events: none;
+        }
+    }
+
+    &__select {
+        position: relative;
+
+        &:before {
+            content: '';
+            position: absolute;
+            .centered-y;
+            right: 16px;
+            .triangle(bottom, @base-font-color, 7px);
+            pointer-events: none;
+        }
+
+        & select.input {
+            .appearance(none);
+            padding-right: 25px;
+        }
+
+        &.form-group--error {
+            & select.input {
+                border-color: @color-danger;
+            }
+
+            .form-group__label {
+                display: block;
+                color: @color-danger;
+            }
+        }
+    }
+}
+
+
+.rtl .form-group {
+
+    &__select, &__datepicker {
+
+        &:before {
+            right: auto;
+            left: 16px;
+        }
+    }
+}

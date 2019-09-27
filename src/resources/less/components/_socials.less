@@ -1,0 +1,29 @@
+/*
+ * Socials
+ *
+ * Create reusable social elements
+ * use font icons which you define 
+ * in 'components/_icon.less'.
+ */
+
+.socials {
+	display: block;
+	position: relative;
+	margin-top: 15px;
+
+	&__link {
+		.size(32px, 32px);
+		display: inline-block;
+		.transition(all .2s ease);
+		margin-right: 20px;
+
+		&:hover {
+			opacity: .7;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+}
