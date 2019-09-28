@@ -5,41 +5,40 @@ import {compose} from "redux";
 import {translate} from "react-i18next";
 import {Redirect, withRouter} from "react-router-dom";
 import InspectionInfo from "./InspectionInfo";
-import injectSheet from "react-jss";
 import Button from "../../elements/Button/button";
 import 'react-table/react-table.css'
 
-const styles = {
-    addButton: {
-        marginBottom: '20px',
-        textAlign: 'right',
-    },
-
-};
-
 const InspectionsHistory = (props) => {
-    const {t, classes, addNewForm} = props;
+    const {t, addNewForm} = props;
     return <div>
         {!props.id ?
+
             <div>
-                <div className={classes.addButton}>
-                    <Button title={t("inspections.btnNewInspection")} onClick={addNewForm}/>
+                <div className="content-header b-b">
+                    <p className="content-header__subtitle">{t('inspections.inspections')}</p>
+                    <h2 className="content-header__title">{t('inspections.inspectionsHistory')}</h2>
                 </div>
-                <MaterialTable
-                    title="Inspections"
-                    columns={props.columns}
-                    options={{
-                        headerStyle: {
-                            position: 'sticky',
-                            top: '0',
-                            minHeight: '2em'
-                        }
-                    }}
-                    data={props.data}
-                    onRowClick={(event, rowData) => {
-                        props.history.push(`../inspections/${rowData.id}`);
-                    }}
-                />
+                <div className="modal-footer">
+                    <Button title={t("inspections.btnNewInspection")} onClick={addNewForm}
+                            className="btn btn--brand btn--long btn--no-shadow js-services-modal-toggler"/>
+                </div>
+                <div className="modal-footer">
+                    <MaterialTable
+                        title=""
+                        columns={props.columns}
+                        options={{
+                            headerStyle: {
+                                position: 'sticky',
+                                top: '0',
+                                minHeight: '2em'
+                            }
+                        }}
+                        data={props.data}
+                        onRowClick={(event, rowData) => {
+                            props.history.push(`../inspections/${rowData.id}`);
+                        }}
+                    />
+                </div>
             </div>
             : props.id !== 'add' && <InspectionInfo id={props.id}/>}
 
@@ -55,7 +54,7 @@ const InspectionsHistoryContainer = (props) => {
     return <>
         {/*{!isAuth && <Redirect to={'/login'}/>}*/}
         <InspectionsHistory {...props} columns={columns} addNewForm={addNewForm}/>
-        </>
+    </>
 };
 
 const mapStateToProps = (state, props) => {
@@ -69,7 +68,6 @@ const mapStateToProps = (state, props) => {
 
 
 export default compose(
-    injectSheet(styles),
     withRouter,
     connect(mapStateToProps, null),
     translate("common"),

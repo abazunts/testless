@@ -23,17 +23,17 @@ const Signature = (props) => {
                               sigPad = ref
                           }}/>
         </div>
-        <div className={style.buttons}>
-            <div className={style.button}>
-                <Button onClick={clear} title={props.t("inspections.clearButton")} width={'60px'}/>
-            </div>
-            <div className={style.button}>
-                <Button onClick={trim} title={props.t("inspections.saveButton")} width={'60px'}/>
-            </div>
-            <div className={style.button}>
-                <Button onClick={props.onClick} title={props.t("inspections.closeButton")} width={'60px'}/>
-            </div>
+        <div className="modal-footer text-right b-t mt-lg">
+            <button onClick={clear}
+                    className="btn btn--brand-outline btn--rect btn--long js-services-works-modal-close mr-lg btn--no-shadow">{props.t("inspections.clearButton")}
+            </button>
+            <button onClick={props.onClick}
+                    className="btn btn--brand-outline btn--rect btn--long js-services-works-modal-close mr-lg btn--no-shadow">{props.t("inspections.closeButton")}
+            </button>
+            <button onClick={trim}
+                    className="btn btn--brand btn--long btn--no-shadow js-services-modal-toggler">{props.t("inspections.saveButton")}</button>
         </div>
+
     </div>
 };
 

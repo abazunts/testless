@@ -46,19 +46,13 @@ const styles = {
 };
 
 const Select = (props) => {
-    const {classes, value, title, name, t, visibleButtonAdd, i18n, ref} = props;
-    return <div className={classes.row}>
-        <div className={classes.title}>
-            {title}
-        </div>
+    const {classes, value, title, name} = props;
+    return <div className="form-group support__form-group">
+        <p className="form-group__label"> {title}</p>
         <div className={classes.select}>
-            <Field component="select" name={name} className={classes.field} dir={i18n.language === 'ar' && 'rtl'} ref={ref}>
+            <Field component="select" name={name} className="input js-input input--blue input--rect">
                 {value.map(n => <option key={n.value} value={n.value}>{n.value}</option>)}
             </Field>
-            {visibleButtonAdd &&
-            <div className={classes.button} >
-                <Button title={t("inspections.add")} background={'#0065a1'} width={'50px'}/>
-            </div>}
         </div>
     </div>
 };

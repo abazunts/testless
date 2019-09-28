@@ -42,14 +42,20 @@
     "cancel": "إلغاء وعودة",
     "withOutSubmit": "حفظ بدون ارسال",
     "addViolation": "إضافة مخالفة",
-    "violations": "قائمة المخالفات"
+    "violations": "قائمة المخالفات",
+    "inspectionsHistory": "Inspections History",
+    "inspections": "Inspections",
+    "newInspection": "New inspection",
+    "newInspectionTitleMessage": "Please complete all required fields"
   },
   "login": {
     "email": "اسم المستخدم",
     "password": "كلمة السر",
     "loginButton": "دخول",
     "emailRequired": "البريد الالكتروني مطلوب",
-    "passwordRequired": "كلمة المرور مطلوبة"
+    "passwordRequired": "كلمة المرور مطلوبة",
+    "authorization": "Authorization",
+    "authorizationHelloMessage": "Please enter username and password"
   },
   "code": {
     "en": "English",
@@ -57,6 +63,8 @@
   },
   "errors": {
     "violationRequired": "Please select violation",
-    "countRequired": "Please enter count violation"
+    "countRequired": "Please enter count violation",
+    "email": "Email is Required",
+    "password": "Password is Required"
   }
 }

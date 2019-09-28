@@ -12,7 +12,7 @@ const Header = (props) => {
     const {changeLanguage} = props;
     const {t, i18n} = props;
     return <Fragment>
-        <header className='header'>
+        <header className={'header'}>
             <div className="header-wrap">
                 <NavLink to={"/"} className="logo">
                     <span>Beta</span>

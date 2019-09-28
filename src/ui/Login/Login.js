@@ -13,13 +13,12 @@ import {Redirect, withRouter} from "react-router-dom";
 const styles = {
     loginContainer: {
         background: 'white',
-        width: '50vh',
         padding: '30px',
-        textAlign: 'center',
         boxShadow: "1px 1px 6px 1px #c5c5c5",
     },
     buttonSubmit: {
         marginTop: '20px',
+        textAlign: "center"
     }
 };
 
@@ -74,20 +73,24 @@ const LoginForm = (props) => {
             }}
         >
             {({errors, touched}) => (
-                <Form>
-                    <div>
+                <Form className="js-submit-form js-support-form">
+                    <div className="content-header b-b">
+                        <h2 className="content-header__title">{t('login.authorization')}</h2>
+                        <p className="text text-gray pt-xs">{t('login.authorizationHelloMessage')}</p>
+                    </div>
+                    <div className="content-pane">
                         <Field name="email"
                                title={t("login.email")}
                                errors={errors} touched={touched} t={t} i18n={props.i18n}/>
-                    </div>
-                    <div>
                         <Field name="password"
                                title={t("login.password")}
                                errors={errors} touched={touched} type={'password'} t={t} i18n={props.i18n}/>
+                        <div className="modal-footer text-left b-t mt-lg">
+                            <Button title={t("login.loginButton")}
+                                    className="btn btn--brand btn--long btn--no-shadow js-services-modal-toggler"/>
+                        </div>
                     </div>
-                    <div className={classes.buttonSubmit}>
-                        <Button title={t("login.loginButton")}/>
-                    </div>
+
                 </Form>
             )}
         </Formik>

@@ -2,7 +2,6 @@ import React from "react";
 import Button from "../../elements/Button/button";
 import Select from "../../elements/field/Select";
 import Field from '../../elements/field';
-import style from './css/style.module.css'
 import {Form, Formik} from "formik";
 import * as Yup from "yup";
 
@@ -38,26 +37,26 @@ const ViolationAdd = (props) => {
         >
             {({errors, touched}) => (
                 <Form>
-                    <div>
+                    <div className={i18n.language === 'ar' && 'rtl'}>
                         <div>
                             <Select name='violationItems' title={t("inspections.violationItems")}
                                     value={violationItems} errors={errors} touched={touched}
-                                    t={t} i18n={i18n}/>
+                                    />
                         </div>
                         <div>
                             <Field name="violationCount"
                                    title={t("inspections.violationsCount")}
-                                   errors={errors} touched={touched} type={'number'} i18n={i18n} t={t}
+                                   errors={errors} touched={touched} type={'number'}
                             />
                         </div>
                     </div>
-                    <div className={style.buttons}>
-                        <div className={style.button}>
-                            <Button onClick={addViolation} title={t("inspections.saveButton")} width={'60px'}/>
-                        </div>
-                        <div className={style.button}>
-                            <Button onClick={props.onClick} title={t("inspections.closeButton")} width={'60px'}/>
-                        </div>
+                    <div className="modal-footer text-right b-t mt-lg">
+                        <Button onClick={props.onClick}
+                                title={t("inspections.closeButton")}
+                                className="btn btn--brand-outline btn--rect btn--long js-services-works-modal-close mr-lg btn--no-shadow"/>
+                        <Button onClick={addViolation}
+                                title={t("inspections.saveButton")}
+                                className="btn btn--brand btn--long btn--no-shadow js-services-modal-toggler"/>
                     </div>
                 </Form>)}
         </Formik>

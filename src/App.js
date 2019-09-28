@@ -6,26 +6,28 @@ import InspectionsHistoryContainer from "./ui/Inspections/InspectionHistory";
 import NewInspectionContainer from "./containers/NewInspection";
 import injectSheet from "react-jss";
 import './resources/less/styles.less'
+import {translate} from "react-i18next";
 
 const App = (props) => {
     return (
-        <body >
-
-            <div>
-                <HeaderContainer/>
-            </div>
-            <section className="content home">
-                <div>
-                    <Route exact path={'/login'} render={() => <LoginContainer/>}/>
+        <body className={props.i18n.language === 'ar' && 'rtl'}>
+        <div>
+            <HeaderContainer/>
+        </div>
+        <section className="content home">
+            <section className="content">
+                <div className="content-form">
+                    <Route exact path={'/login'} render={() =><LoginContainer/>}/>
                     <Route exact path={'/inspections/:id?'} render={() => <InspectionsHistoryContainer/>}/>
                     <Route exact path={'/inspections/add'} render={() => <NewInspectionContainer/>}/>
                 </div>
             </section>
-            <footer className="footer">
-                <p>All rights reserved for the <a href="#" className="text-underline">Saudi Authority for Intellectual
-                    Property</a>
-                    © 2019</p>
-            </footer>
+        </section>
+        <footer className="footer">
+            <p>All rights reserved for the <a href="#" className="text-underline">Saudi Authority for Intellectual
+                Property</a>
+                © 2019</p>
+        </footer>
         </body>
     );
 };
@@ -44,5 +46,5 @@ const AppContainer = (props) => {
 const styles = {
     background: '#ffffff'
 };
-export default injectSheet(styles)(AppContainer);
+export default translate("common")(injectSheet(styles)(AppContainer));
 

@@ -51,7 +51,8 @@ class ModalViolation extends React.Component {
     render() {
         return (
             <div>
-                <div className={this.props.classes.button} onClick={this.openModal}>{this.props.t('inspections.addViolation')}</div>
+                <div
+                    onClick={this.openModal} className="btn btn--brand btn--long btn--no-shadow js-services-modal-toggler">{this.props.t('inspections.addViolation')}</div>
                 <Modal
                     isOpen={this.state.modalIsOpen}
                     onRequestClose={this.closeModal}

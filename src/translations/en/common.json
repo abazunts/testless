@@ -42,15 +42,18 @@
     "cancel": "Cancel & Return",
     "withOutSubmit": "Save Without Submitting",
     "addViolation": "Add Violation",
-    "violations": "Violations List"
-
+    "violations": "Violations List",
+    "inspectionsHistory": "Inspections History",
+    "inspections": "Inspections",
+    "newInspection": "New inspection",
+    "newInspectionTitleMessage": "Please complete all required fields"
   },
   "login": {
     "email": "Username",
     "password": "Password",
     "loginButton": "Login",
-    "emailRequired": "Email is Required",
-    "passwordRequired": "Password is Required"
+    "authorization": "Authorization",
+    "authorizationHelloMessage": "Please enter username and password"
   },
   "code": {
     "en": "English",
@@ -58,6 +61,8 @@
   },
   "errors": {
     "violationRequired": "Please select violation",
-    "countRequired": "Please enter count violation"
+    "countRequired": "Please enter count violation",
+    "email": "Email is Required",
+    "password": "Password is Required"
   }
 }
