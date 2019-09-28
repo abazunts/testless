@@ -32,10 +32,6 @@ self.__precacheManifest = [
     "url": "/testless/static/media/ltbukra-bold-webfont.a1c38193.ttf"
   },
   {
-    "revision": "13afdf88572fad03419fc4c382e19438",
-    "url": "/testless/static/media/ltbukra-regular-webfont.13afdf88.eot"
-  },
-  {
     "revision": "91ed980154af565deeb380eb66dddc1d",
     "url": "/testless/static/media/ltbukra-bold-webfont.91ed9801.woff"
   },
@@ -44,16 +40,20 @@ self.__precacheManifest = [
     "url": "/testless/static/media/ltbukra-bold-webfont.706c12cd.svg"
   },
   {
+    "revision": "e050d364fd222620de26f7ad06aa5b64",
+    "url": "/testless/static/media/ltbukra-regular-webfont.e050d364.ttf"
+  },
+  {
+    "revision": "13afdf88572fad03419fc4c382e19438",
+    "url": "/testless/static/media/ltbukra-regular-webfont.13afdf88.eot"
+  },
+  {
     "revision": "6495e18842b74e7cba070d9af9074cea",
     "url": "/testless/static/media/ltbukra-regular-webfont.6495e188.woff2"
   },
   {
     "revision": "62ac976ecd2f557ea5ee085d8d1bb256",
     "url": "/testless/static/media/ltbukra-regular-webfont.62ac976e.woff"
-  },
-  {
-    "revision": "e050d364fd222620de26f7ad06aa5b64",
-    "url": "/testless/static/media/ltbukra-regular-webfont.e050d364.ttf"
   },
   {
     "revision": "9cb761ca91c3fe6c7dde8af50f1b4fa9",
@@ -72,12 +72,12 @@ self.__precacheManifest = [
     "url": "/testless/static/media/icomoon.8420933c.woff"
   },
   {
-    "revision": "57d096f206aefbe7c3770e2ba81cb23e",
-    "url": "/testless/static/media/icomoon.57d096f2.svg"
-  },
-  {
     "revision": "81290c84bbe762228faedbde0034d6d7",
     "url": "/testless/static/media/card-icon-bg.81290c84.svg"
+  },
+  {
+    "revision": "57d096f206aefbe7c3770e2ba81cb23e",
+    "url": "/testless/static/media/icomoon.57d096f2.svg"
   },
   {
     "revision": "433bea8da239546b460a711eedc968f4",
